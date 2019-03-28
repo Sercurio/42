@@ -5,7 +5,7 @@ void ft_print_combn(int);
 void ft_putnbr(int);
 
 int main(void){
-    ft_print_combn(8);
+    ft_print_combn(1);
     return 0;
 }
 
@@ -33,6 +33,10 @@ void ft_print_combn(int n){
         i++;
     }
 
+    if(n == 1){
+        ft_putnbr(0);
+        ft_putchar('\n');
+    }
     while(nbr <= limite){
         temp = nbr;
         repetition = 0;
@@ -47,7 +51,6 @@ void ft_print_combn(int n){
         if(!repetition){
             ft_putnbr(nbr);
             ft_putchar('\n');
-            compteur++;
         }
         nbr++;
     }
