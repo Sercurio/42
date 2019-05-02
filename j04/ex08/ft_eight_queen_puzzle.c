@@ -5,11 +5,10 @@
 
 int ft_eight_queens_puzzle(void);
 int safe_queen(int*, int, int);
-int ft_abs(int);
 void drop_queen(int*, int, int*);
 
 int main(void){
-    printf("%d",ft_eight_queens_puzzle());
+    ft_eight_queens_puzzle();
     return 0;
 }
 
@@ -27,6 +26,7 @@ void drop_queen(int* echiquier, int position, int* solution){
     int i;
     int j;
     if(position == 8){
+        printf("solution : %p\n", solution);
         *solution =+ 1;
         j=0;
         while(j < 8){
@@ -54,11 +54,4 @@ int safe_queen(int* echiquier, int colonne, int ligne){
         i++;
     }
     return 1;
-}
-
-
-int ft_abs(int nb){
-    if(nb < 0)
-        nb *= (-1);
-    return nb;
 }
