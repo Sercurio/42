@@ -26,8 +26,8 @@ void drop_queen(int* echiquier, int position, int* solution){
     int i;
     int j;
     if(position == 8){
-        printf("solution : %p\n", solution);
-        *solution =+ 1;
+        printf("solution : %d\n", *solution);
+        *solution += 1;
         j=0;
         while(j < 8){
             printf("%d",echiquier[j++]);
@@ -47,7 +47,7 @@ void drop_queen(int* echiquier, int position, int* solution){
 }
 int safe_queen(int* echiquier, int colonne, int ligne){
     int i = 0;
-    while(i <= colonne){
+    while(i < colonne){
         if(echiquier[i] == ligne || i - echiquier[i] == colonne - ligne
                 || i + echiquier[i] == colonne + ligne)
             return 0;
