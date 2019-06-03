@@ -16,7 +16,7 @@ int main(void){
 
 
 int ft_eight_queens_puzzle(){
-    int echiquier[N] = {-1,-1,-1,-1,-1,-1,-1,-1};
+    int echiquier[N] = {-1};
     int solution = 0;
 
     drop_queen(echiquier, 0, &solution);
@@ -26,12 +26,18 @@ int ft_eight_queens_puzzle(){
 
 void drop_queen(int* echiquier, int position, int* solution){
     int i;
-    if(position == N){
-        *solution += 1;
+    int j;
+
+    j = 0;
+    if(position > N){
+    	while(j++ < N){ 
+	    ft_putnbr(echiquier[j]);
+	}
+	ft_putchar('\n');
     }
     else{
         i = 0;
-        while(i < N){
+        while(i <= N){
             if(safe_queen(echiquier, position, i)){
                 echiquier[position] = i;
                 drop_queen(echiquier, position + 1, solution);
